@@ -1,0 +1,30 @@
+@import "../../../styles/variables";
+
+header.header {
+  position: relative;
+  width: 100%;
+  z-index: 4;
+  border-bottom: 1px solid rgba(55, 65, 81);
+  > .inner_header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    > .hamburger {
+      position: absolute;
+      left: 0;
+      padding-left: 1rem;
+    }
+    > a > h2 {
+      font-size: $h2size;
+      font-weight: lighter;
+      cursor: pointer;
+    }
+  }
+}
+
+header.header.absolute {
+  position: absolute;
+  top: 0;
+}

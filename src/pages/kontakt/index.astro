@@ -1,0 +1,74 @@
+---
+//styles
+import styles from "./Contact.module.scss";
+//components
+import NormalButton from "../../components/NormalButton/NormalButton";
+import WhyUs from "../../components/WhyUs/WhyUs";
+import SocialIcon from "../../components/SocialIcon/SocialIcon";
+import LogoHeading from "../../components/LogoHeading/LogoHeading";
+import Form from "./_components/Form/Form";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Kontakt">
+  <div class={styles.contact}>
+    <div class={`green-gradient ${styles.green_overlay}`}></div>
+    <main class="main-container">
+      <LogoHeading>Kontakt</LogoHeading>
+      <section class={styles.info}>
+        <i class="far fa-comment"></i>
+        <h2>Spojte se s námi</h2>
+        <div class={styles.content}>
+          <div class={styles.contact_item}>
+            <i class="fas fa-phone"></i>
+            <p>(+420) 737 951 560</p>
+          </div>
+          <div class={styles.contact_item}>
+            <i class="fas fa-envelope"></i>
+            <p>info@statements.cz</p>
+          </div>
+        </div>
+        <div class={styles.socials}>
+          <SocialIcon
+            icon={"instagram"}
+            size={24}
+            link="https://www.instagram.com/statements.cz/"
+          />
+          <SocialIcon
+            link={"https://www.linkedin.com/company/86135628"}
+            icon={"linkedin"}
+            size={24}
+          />
+        </div>
+
+        <NormalButton
+          handleClick={() => {
+            alert(".");
+          }}
+        >
+          Chci se sejít!
+        </NormalButton>
+      </section>
+      <section class={styles.form}>
+        <i class="far fa-envelope-open"></i>
+        <h2>Napište nám</h2>
+        <div class={styles.content}>
+          <Form />
+        </div>
+      </section>
+      <section class={styles.billing}>
+        <i class="far fa-id-card"></i>
+        <h2>Fakturační údaje</h2>
+        <p>
+          <b>Pavel Hašek</b>
+        </p>
+        <p>
+          <b>IČ: 14218038</b>
+        </p>
+        <p>Praha</p>
+        <p>Česká Republika</p>
+      </section>
+      <WhyUs />
+    </main>
+  </div>
+</Layout>

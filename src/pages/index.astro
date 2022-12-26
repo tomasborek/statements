@@ -1,0 +1,23 @@
+---
+import styles from "./Home.module.scss";
+import Layout from "../layouts/Layout.astro";
+import { getIndexPage } from "../utils/api";
+import Banner from "./_components/Banner/Banner";
+import Services from "./_components/Services/Services.astro";
+import Technologies from "./_components/Technologies/Technologies";
+import WhyUs from "../components/WhyUs/WhyUs";
+const page = await getIndexPage();
+---
+
+<Layout>
+  <Banner data={page} client:load />
+  <div class="main-container">
+    <Services services={page.services} />
+    <Technologies
+      devTech={page.devTechnologies}
+      marketingTech={page.marketingTechnologies}
+      client:visible
+    />
+    <WhyUs />
+  </div>
+</Layout>

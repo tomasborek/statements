@@ -1,0 +1,10 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ServiceLayout from "../../layouts/ServiceLayout/ServiceLayout";
+import { getServicePage } from "../../utils/api";
+const page = await getServicePage("multimedia");
+---
+
+<Layout title={page.title}>
+  <ServiceLayout content={page} />
+</Layout>

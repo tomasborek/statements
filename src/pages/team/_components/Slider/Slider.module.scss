@@ -1,0 +1,55 @@
+@import "../../../../../styles/variables.scss";
+.slider {
+  overflow: hidden;
+  position: relative;
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  @media (min-width: $mdScreen) {
+    min-height: 500px;
+  }
+  > header {
+    > h1 {
+      position: relative;
+      padding: 0 1rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      z-index: 2;
+    }
+  }
+  > .wrapper {
+    position: relative;
+    > .arrows {
+      position: absolute;
+      display: none;
+      right: 0;
+      left: 0;
+      z-index: 3;
+      top: 50%;
+      justify-content: space-between;
+      color: $lightGreen;
+      padding: 0 1rem;
+
+      > i.disabled {
+        opacity: 30%;
+        pointer-events: none;
+      }
+      @media (max-width: 700px) {
+        display: flex;
+      }
+      > i {
+        font-size: 1.5rem;
+      }
+    }
+    > .people {
+      position: relative;
+      display: flex;
+      z-index: 2;
+      @media (min-width: 700px) {
+        justify-content: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@import "../../../styles/variables.scss";
+.glowing_button {
+  position: relative;
+  background-color: $lightGreen;
+  color: white;
+  width: 200px;
+  padding: 0.5rem 0;
+  border-radius: 10px;
+  box-shadow: 0 0 25px 0 rgba(19, 169, 72, 0.8);
+  transition: all 500ms;
+  overflow: hidden;
+  cursor: pointer;
+  & > p {
+    position: relative;
+    z-index: 2;
+    line-height: 24px;
+  }
+  & > .overlay {
+    position: absolute;
+    top: 0;
+    left: -5px;
+    background-color: $darkGreen;
+    height: 100%;
+    width: 0;
+    z-index: 1;
+    transform: skew(-12deg);
+    transition: all 500ms;
+  }
+  &:hover {
+    box-shadow: 0 0 25px 0 rgba(20, 117, 54, 0.8);
+    & > .overlay {
+      width: 120%;
+    }
+  }
+}

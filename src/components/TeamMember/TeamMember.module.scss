@@ -1,0 +1,90 @@
+@import "../../../styles/variables";
+
+.team_member {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 250px;
+  min-width: 250px;
+  transition: all 500ms;
+  opacity: 50%;
+  &:hover {
+    opacity: 100%;
+    & > header {
+      opacity: 100%;
+    }
+
+    & > .person > img.avatar {
+      transform: translateY(-5rem);
+    }
+
+    & > .person > img.holo {
+      opacity: 50%;
+    }
+  }
+  &.allow_resize {
+    padding-top: 64px;
+    &:hover {
+      width: 300px;
+      padding-top: 0;
+    }
+  }
+  &.active {
+    opacity: 100%;
+    & > header {
+      opacity: 100%;
+    }
+    & > .person > img.avatar {
+      transform: translateY(-5rem);
+    }
+    & > .person > img.holo {
+      opacity: 50%;
+    }
+  }
+  &.off {
+    pointer-events: none;
+    & > header {
+      opacity: 0;
+    }
+    & > .person > img.holo {
+      opacity: 0;
+    }
+  }
+  & > header {
+    flex: 1;
+    margin-bottom: 1rem;
+    transition: all 500ms;
+    width: 100%;
+    padding-bottom: 5rem;
+    opacity: 0;
+    & > h3 {
+      text-align: center;
+    }
+    & > p {
+      text-align: center;
+      color: $proseText;
+    }
+  }
+  & > .person {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 0 1rem;
+    & > img.avatar {
+      user-select: none;
+      transition: all 500ms;
+      width: 100%;
+      height: auto;
+    }
+    & > img.holo {
+      position: absolute;
+      user-select: none;
+      width: 100%;
+      bottom: 0;
+      transition: all 1000ms;
+      opacity: 0;
+    }
+  }
+}

@@ -1,0 +1,139 @@
+@import "../../../styles/variables";
+
+.info_layout {
+  position: relative;
+  & > main {
+    section.intro {
+      margin-top: 2rem;
+      margin-bottom: 3rem;
+      & > h1 {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      & > p {
+        color: $proseText;
+        text-align: center;
+      }
+    }
+    section.banner_section {
+      margin: 3rem 0;
+      position: relative;
+      & > h2 {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+      & > p {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        margin-bottom: 2rem;
+        color: $proseText;
+      }
+      & > .banner {
+        @media (min-width: $mdScreen) {
+          display: flex;
+          align-items: stretch;
+          justify-content: center;
+        }
+        & > .item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          transition: all 250ms;
+          cursor: pointer;
+          padding: 2rem;
+          & > i,
+          & > img {
+            color: $lightGreen;
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
+            transition: all 1000ms;
+          }
+          & > img {
+            width: 72px;
+          }
+          & > h3 {
+            font-size: 1rem;
+            text-align: center;
+            font-weight: bold;
+            line-height: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: $lightGreen;
+          }
+          & > p {
+            text-align: center;
+            font-weight: lighter;
+            font-size: 14px;
+            line-height: 1.25rem;
+            color: $proseText;
+          }
+          &:hover {
+            background-color: $grayBg;
+            & > i,
+            & > img {
+              transform: translateY(-5px);
+            }
+          }
+          @media (min-width: $mdScreen) {
+            border-right: $lightGreenLowOpacity 1px solid;
+            &:last-child {
+              border-right: none;
+            }
+          }
+        }
+      }
+    }
+    section.check_list_section {
+      margin: 3rem 0;
+      & > h2 {
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+      & > ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 1rem;
+        padding: 0;
+        & > li {
+          display: flex;
+          align-items: center;
+          column-gap: 0.5rem;
+          & > i {
+            color: $lightGreen;
+          }
+        }
+      }
+      & > p.description {
+        font-weight: lighter;
+        color: $proseText;
+        text-align: center;
+        margin-top: 1rem;
+      }
+    }
+  }
+  section.expert {
+    padding: 1rem;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    & > h2 {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    & > p {
+      text-align: center;
+      color: $proseText;
+      margin-bottom: 1rem;
+    }
+    & > div {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

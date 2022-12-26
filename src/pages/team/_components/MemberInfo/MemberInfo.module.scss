@@ -1,0 +1,17 @@
+@import "../../../../../styles/variables.scss";
+.member_info_item {
+  margin-bottom: 1rem;
+  > h3 {
+    font-size: 1.25rem;
+    border-left: 2px solid $lightGreen;
+    padding-left: 1rem;
+  }
+  > p.role {
+    font-weight: lighter;
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+  }
+  > .description {
+    color: $proseText;
+  }
+}

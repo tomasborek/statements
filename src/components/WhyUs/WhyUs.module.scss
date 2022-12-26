@@ -1,0 +1,20 @@
+@import "../../../styles/variables";
+
+section.why_us {
+  margin: 3rem;
+  & > h2 {
+    font-size: $h2size;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  & > p {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: $proseText;
+  }
+  & > .actions {
+    display: flex;
+    justify-content: center;
+  }
+}

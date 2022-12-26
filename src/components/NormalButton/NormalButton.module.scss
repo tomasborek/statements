@@ -1,0 +1,14 @@
+@import "../../../styles/variables";
+
+button.normal_button {
+  border: 2px solid $lightGreen;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  color: $lightGreen;
+  font-weight: bold;
+  transition: all 250ms;
+  &:hover {
+    background-color: $lightGreen;
+    color: $bg;
+  }
+}

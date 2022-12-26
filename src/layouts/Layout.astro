@@ -1,0 +1,70 @@
+---
+import "../../styles/globals.scss";
+import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
+import NavOverlay from "../components/NavOverlay/NavOverlay";
+export interface Props {
+  title?: string;
+}
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerPolicy="no-referrer"
+    />
+    <meta
+      name="description"
+      content="Jsme mladý tým zabývající se (nejen) digitálním marketingem a vývojem webů. Vytváříme webové aplikace a projekty, které mají smysl. Na vše se díváme moderním a trendy stylem, z online světa nám nic neunikne. Vize jsou nekonečné, pojďte je s námi naplnit."
+    />
+    <meta
+      name="keywords"
+      content="statements, digitální marketing, mediál, webové stránky, tvorba webu, tvorba stránek, tvorba grafiky, grafika, IT služby, chci web"
+    />
+    <link rel="icon" type="image/x-icon" href="/img/logo/osmicka.svg" />
+    <!-- Google / search engine -->
+    <meta itemprop="name" content="Statements | Mediální agentura" />
+    <meta
+      itemprop="description"
+      content="Jsme mladý tým zabývající se (nejen) digitálním marketingem a vývojem webů. Vytváříme webové aplikace a projekty, které mají smysl. Na vše se díváme moderním a trendy stylem, z online světa nám nic neunikne. Vize jsou nekonečné, pojďte je s námi naplnit."
+    />
+    <meta itemprop="image" content="/img/meta-image.png" />
+    <!-- Facebook  -->
+    <meta property="og:url" content="https://www.statements.cz" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Statements | Mediální agentura" />
+    <meta
+      property="og:description"
+      content="Jsme mladý tým zabývající se (nejen) digitálním marketingem a vývojem webů. Vytváříme webové aplikace a projekty, které mají smysl. Na vše se díváme moderním a trendy stylem, z online světa nám nic neunikne. Vize jsou nekonečné, pojďte je s námi naplnit."
+    />
+    <meta property="og:image" content="/img/meta-image.png" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Statements | Mediální agentura" />
+    <meta
+      name="twitter:description"
+      content="Jsme mladý tým zabývající se (nejen) digitálním marketingem a vývojem webů. Vytváříme webové aplikace a projekty, které mají smysl. Na vše se díváme moderním a trendy stylem, z online světa nám nic neunikne. Vize jsou nekonečné, pojďte je s námi naplnit."
+    />
+    <meta name="twitter:image" content="/img/meta-image.png" />
+    <title>
+      {title ? `${title} | Statements` : "Statements | Mediální agentura"}
+    </title>
+  </head>
+  <body>
+    <NavOverlay client:load />
+    <Header client:load />
+    <slot />
+    <Footer />
+  </body>
+</html>
+<style is:global></style>

@@ -1,0 +1,21 @@
+---
+import LogoHeading from "../../components/LogoHeading/LogoHeading";
+import Layout from "../../layouts/Layout.astro";
+import { getPortfolio } from "../../utils/api";
+import Views from "./_components/Views/Views";
+import styles from "./Portfolio.module.scss";
+const page = await getPortfolio();
+---
+
+<Layout title="Portfolio">
+  <main class={styles.portfolio}>
+    <LogoHeading>Portfolio</LogoHeading>
+    <div class="main-container">
+      <Views
+        references={page.projects}
+        designReferences={page.designProjects}
+        client:load
+      />
+    </div>
+  </main>
+</Layout>

@@ -1,0 +1,49 @@
+---
+import styles from "./Team.module.scss";
+//components
+import WhyUs from "../../components/WhyUs/WhyUs";
+import SocialIcon from "../../components/SocialIcon/SocialIcon";
+import MemberInfo from "./_components/MemberInfo/MemberInfo.astro";
+import { getTeamPage } from "../../utils/api";
+import Slider from "./_components/Slider/Slider";
+import Layout from "../../layouts/Layout.astro";
+const page = await getTeamPage();
+---
+
+<Layout title={"Team"}>
+  <main class={`${styles.team}`}>
+    <Slider members={page.teamMembers} client:load />
+    <div class="main-container">
+      <section class={styles.member_info}>
+        <h2>Náš tým</h2>
+        {
+          page.teamMembers.map((member: any) => (
+            <MemberInfo
+              name={member.name}
+              role={member.role}
+              description={member.description}
+            />
+          ))
+        }
+      </section>
+      <section class={styles.contact}>
+        <h2>Sledujte nás na sociálních sítích</h2>
+        <div class={styles.icons}>
+          <SocialIcon
+            icon={"instagram"}
+            link="https://instagram.com/statements.cz"
+            size={30}
+            glowy
+          />
+          <SocialIcon
+            icon={"linkedin"}
+            link="https://www.linkedin.com/company/86135628"
+            size={30}
+            glowy
+          />
+        </div>
+      </section>
+      <WhyUs />
+    </div>
+  </main>
+</Layout>

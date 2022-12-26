@@ -1,0 +1,17 @@
+---
+import styles from "./MemberInfo.module.scss";
+export interface Props {
+  name: string;
+  description: string;
+  role: string;
+}
+const { name, description, role } = Astro.props;
+---
+
+<div class={styles.member_info_item}>
+  <h3>{name}</h3>
+  <p class={styles.role}>{role}</p>
+  <div class={styles.description}>
+    {description}
+  </div>
+</div>

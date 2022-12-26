@@ -1,0 +1,12 @@
+@import "../../../styles/variables";
+
+i.social_icon {
+  cursor: pointer;
+  transition: all 250ms;
+  &:hover {
+    color: $lightGreen;
+  }
+  &.glowy {
+    color: $lightGreen;
+  }
+}

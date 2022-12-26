@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@200;300;400;700&display=swap");
+@import "variables";
+
+//Reset + basic styles
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*::selection {
+  background-color: $lightGreenLowOpacity;
+}
+body {
+  font-family: "Exo 2", sans-serif !important;
+  min-height: 100vh;
+  background-color: $bg;
+  color: white;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: $h1size;
+}
+
+h2 {
+  font-size: $h2size;
+}
+
+h3 {
+  font-size: $h3size;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  font-family: inherit;
+  font-size: 100%;
+  line-height: inherit;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.main-container {
+  width: 100%;
+  padding: 0 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.green-shadow {
+  text-shadow: 0 4px 20px rgba(19, 169, 72);
+}
+
+.black-gradient {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.7847514005602241) 14%,
+    rgba(15, 15, 15, 0.025647759103641476) 82%
+  );
+}
+
+.green-gradient {
+  background: rgb(20, 117, 54);
+  background: linear-gradient(
+    41deg,
+    rgba(20, 117, 54, 1) -20%,
+    rgba(18, 18, 18, 1) 38%
+  );
+}
+
+.transparent-green-gradient {
+  background: rgb(20, 117, 54);
+  background: linear-gradient(
+    41deg,
+    rgba(20, 117, 54, 1) -20%,
+    rgba(18, 18, 18, 0) 38%
+  );
+}
+
+.transparent-responsive-green-gradient {
+  background: rgb(20, 117, 54);
+  background: linear-gradient(
+    41deg,
+    rgba(20, 117, 54, 1) -20%,
+    rgba(18, 18, 18, 0) 38%
+  );
+}
+
+*::-webkit-media-controls-panel {
+  display: none !important;
+  -webkit-appearance: none;
+}
+
+*::-webkit-media-controls-play-button {
+  display: none !important;
+  -webkit-appearance: none;
+}
+*::-webkit-media-controls-start-playback-button {
+  display: none !important;
+  -webkit-appearance: none;
+}
+video::-webkit-media-controls {
+  opacity: 0;
+}
+@media screen and (min-width: 768px) {
+  .transparent-responsive-green-gradient {
+    background: rgb(20, 117, 54);
+    background: linear-gradient(
+      41deg,
+      rgba(20, 117, 54, 1) -20%,
+      rgba(18, 18, 18, 1) 38%
+    );
+  }
+}
