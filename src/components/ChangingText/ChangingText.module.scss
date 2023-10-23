@@ -1,3 +1,17 @@
+@import "../../../styles/variables.scss";
 .changing_text {
-  display: inline;
+  @media (max-width: $mdScreen) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    > * {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    > * > * {
+      text-align: center !important;
+    }
+  }
 }

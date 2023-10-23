@@ -1,7 +1,7 @@
 import { useState, type FC, useEffect } from "react";
 import TextTransition from "react-text-transition";
-
-const TEXTS = ["design", "web", "app", "statement."];
+import styles from "./ChangingText.module.scss";
+const TEXTS = ["web", "app", "design", "statement."];
 
 const ChangingText: FC = () => {
   const [index, setIndex] = useState<number>(0);
@@ -18,10 +18,12 @@ const ChangingText: FC = () => {
     }
   }, [index]);
 
-  if(!loaded) return null;
+  if (!loaded) return <div className={styles.changing_text}>web</div>;
   return (
-    <div>
-      <TextTransition>{TEXTS[index % TEXTS.length]}</TextTransition>
+    <div className={styles.changing_text}>
+      <TextTransition style={{ textAlign: "center" }}>
+        {TEXTS[index % TEXTS.length]}
+      </TextTransition>
     </div>
   );
 };
