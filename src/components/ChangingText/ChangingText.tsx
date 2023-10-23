@@ -4,7 +4,7 @@ import styles from "./ChangingText.module.scss";
 
 const TEXTS = ["design", "web", "app", "statement."];
 
-const ChangingText = () => {
+const ChangingText: FC = () => {
   const [index, setIndex] = useState<number>(0);
 
   useEffect(() => {
