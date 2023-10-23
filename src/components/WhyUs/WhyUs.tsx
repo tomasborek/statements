@@ -7,7 +7,7 @@ import NormalButton from "../NormalButton/NormalButton";
 const WhyUs = () => {
   return (
     <section className={styles.why_us}>
-      <h2>Proč zrovna statements?</h2>
+      <h2>Proč zrovna Statements?</h2>
       <p>
         Víme, jaké to je stát na začátku a mít vize a cíle. Proto s vámi budeme
         vždy jednat přátelsky a otevřeně. Máme zkušenosti s malými i velkými
