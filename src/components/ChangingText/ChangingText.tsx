@@ -1,13 +1,14 @@
 import { useState, type FC, useEffect } from "react";
-import TextTransition, { presets } from "react-text-transition";
-import styles from "./ChangingText.module.scss";
+import TextTransition from "react-text-transition";
 
 const TEXTS = ["design", "web", "app", "statement."];
 
 const ChangingText: FC = () => {
   const [index, setIndex] = useState<number>(0);
+  const [loaded, setLoaded] = useState<boolean>(false);
 
   useEffect(() => {
+    setLoaded(true);
     if (index < 3) {
       const intervalId = setInterval(
         () => setIndex((index) => index + 1),
@@ -17,10 +18,11 @@ const ChangingText: FC = () => {
     }
   }, [index]);
 
+  if(!loaded) return null;
   return (
-    <TextTransition springConfig={presets.gentle} style={{ display: "inline" }}>
-      {TEXTS[index % TEXTS.length]}
-    </TextTransition>
+    <div>
+      <TextTransition>{TEXTS[index % TEXTS.length]}</TextTransition>
+    </div>
   );
 };
 
