@@ -1,21 +1,58 @@
 ---
 import LogoHeading from "../../components/LogoHeading/LogoHeading";
-import Layout from "../../layouts/Layout.astro";
-import { getPortfolio } from "../../utils/api";
-import Views from "./_components/Views/Views";
+import Layout from "../../layouts/Layout/Layout.astro";
+import Reference from "@/modules/portfolio/components/Reference/Reference.astro";
 import styles from "./Portfolio.module.scss";
-const page = await getPortfolio();
 ---
 
 <Layout title="Portfolio">
   <main class={styles.portfolio}>
     <LogoHeading>Portfolio</LogoHeading>
     <div class="main-container">
-      <Views
-        references={page.projects}
-        designReferences={page.designProjects}
-        client:load
+      <div class={styles.list}>
+        <Reference
+        title="Terifo"
+        img="terifo-logo.webp"
+        description="Web development"
+        link="https://terifo.com"
       />
+      <Reference
+        title="Kontejner Café"
+        img="kontejner-logo.jpg"
+        description="Web Development"
+        link="https://kontejner.cafe"
+      />
+      <Reference
+        title="Involt"
+        img="involt-logo.jpg"
+        description="Web Development"
+        link="https://involt.cz"
+      />
+      <Reference
+        title="Labeta"
+        img="labeta-logo.jpg"
+        description="Social Media"
+        link="https://involt.cz"
+      />
+      <Reference
+        title="Rybí zahrada"
+        img="rybizahrada-logo.png"
+        description="Web Development"
+        link="https://blog.rybizahrada.cz"
+      />
+      <Reference
+        title="Na Baště"
+        img="nabaste-logo.jpg"
+        description="Web Development"
+        link="https://nabaste.com"
+      />
+      <Reference
+        title="Fammi Gelato"
+        img="fammi-logo.png"
+        description="Web Development"
+        link="https://fammi.cz"
+      />
+      </div>  
     </div>
   </main>
 </Layout>

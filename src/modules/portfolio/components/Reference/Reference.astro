@@ -1,0 +1,17 @@
+---
+import styles from "./Reference.module.scss";
+const {link, img, title, description} = Astro.props;
+---
+
+
+<a
+    class={styles.reference}
+    href={link ? link : "/portfolio"}
+  >
+      <div class={styles.overlay}></div>
+      <img src={`/img/portfolio/${img}`} alt={title} />
+      <div class={styles.text}>
+        <h3>{title}</h3>
+        <p>{description}</p>
+      </div>
+    </a>

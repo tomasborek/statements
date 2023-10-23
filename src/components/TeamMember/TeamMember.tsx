@@ -32,7 +32,7 @@ const TeamMember = ({
       <div className={styles.person}>
         <img
           draggable={"false"}
-          src={img}
+          src={`/img/team/${img}`}
           className={styles.avatar}
           alt={name}
         />

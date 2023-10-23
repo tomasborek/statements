@@ -1,12 +1,12 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
+import type { FC } from "react";
 //styles
 import styles from "./ServiceLayout.module.scss";
 //components
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
 import WhyUs from "../../components/WhyUs/WhyUs";
 import TeamMember from "../../components/TeamMember/TeamMember";
 import { imageUrl } from "../../utils/helpers";
+import type { ServiceContent } from "@/types";
 
 interface ExpertProps {
   name: string;
@@ -20,7 +20,11 @@ interface BannerItem {
   description: string;
 }
 
-const ServiceLayout = ({ content }: any) => {
+interface Props {
+  content: ServiceContent;
+}
+
+const ServiceLayout: FC<Props> = ({ content }) => {
   const { title, description, banner, checkList, expert } = content;
   return (
     <>
@@ -64,7 +68,7 @@ const ServiceLayout = ({ content }: any) => {
             <Expert
               name={expert.name}
               description={expert.role}
-              img={imageUrl(expert.image.asset._ref)}
+              img={expert.image}
             />
           )}
           <WhyUs />

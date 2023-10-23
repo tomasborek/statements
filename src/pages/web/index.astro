@@ -1,8 +1,48 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import Layout from "../../layouts/Layout/Layout.astro";
 import ServiceLayout from "../../layouts/ServiceLayout/ServiceLayout";
-import { getServicePage } from "../../utils/api";
-const page = await getServicePage("web");
+import type { ServiceContent } from "@/types";
+const page: ServiceContent = {
+  title: "Webové stránky",
+  description: "Věděli jste, že až 75 % lidí soudí kvalitu služeb dané firmy podle jejich webových stránek? Často se setkáváme s názory, že menší podnik nepotřebuje vlastní webové stránky. V dnešní době je to však velmi důležitá a nezpochybnitelná vizitka, která Vám pomůže získat nové zákazníky a zájemce o Váš podnik. Zaměřujeme se převázně na malé podniky a start-upy, jejichž energie nás baví. Nastartujte svůj byznys s námi.",
+  banner: {
+    title: "Co vám můžeme nabídnout?",
+      description: "Vyberte si službu, která nejvíce odpovídá potřebám Vašeho byznysu.",
+      items: [
+        {
+          icon: "fas fa-code",
+          title: "Malý web",
+          description: "Perfektní pro živnostníky a malé firmy."
+        },
+        {
+          icon: "fas fa-globe",
+          title: "Web na míru",
+          description: "Web pro náročnější projekty a individuální řešení"
+        },
+        {
+          icon: "fab fa-wordpress",
+          title: "Wordpress",
+          description: "Nechte správu webu na nás."
+        },
+      ]
+    },
+    checkList: {
+      title: "Jak probíhá tvorba webových stránek?",
+      description: "Po dokončení webu s Vámi probereme i zvážení doplňkových služeb jako je SEO a Marketing, které jsou nedílnou součásti úspěchu Vašeho byznysu.",
+      items: [
+        "Konzultace a probrání společných cílů",
+        "Vypracování návrhů (UI/UX)",
+        "Kódování a programování",
+        "Společné dolazení cílů",
+        "Dohoda o správě webu"
+      ]
+    },
+    expert: {
+      image: "tomas.png",
+      name: "Tomáš",
+      role: "Vývojář"
+    }
+  }
 ---
 
 <Layout title={page.title}>

@@ -1,0 +1,28 @@
+---
+import styles from "./Services.module.scss";
+import Service from "../Service/Service.astro";
+---
+
+<section class={styles.services}>
+  <h3>Co nabízíme?</h3>
+  <div class={styles.list}>
+        <Service
+          icon={"fas fa-globe"}
+          name={"Webové stránky"}
+          description="Web, který předběhne konkurenci. Bez ohledu na rozsah – od stylové vizitky po ambiciózní projekt – jsme tady, abychom vaše digitální sny proměnili v realitu. Připraveni na skok vpřed?"
+          link={"/web"}
+        />
+        <Service
+          icon={"fas fa-code"}
+          name={"Webové aplikace"}
+          description="Od konceptu k poslednímu pixelu. Ať už malý skvost nebo komplexní platforma, vaše vize je naší vášní. Rádi se pustíme do vývoje webové appky, kterou budete milovat."
+          link={"/marketing"}
+        />
+        <Service
+          icon={"fas fa-palette"}
+          name={"Design"}
+          description="Design webu je umění spojit estetiku a funkčnost. Oslňte své zákazníky a umožněte jim snadnou navigaci a bezproblémový zážitek. Každý pixel má svůj význam a my jsme připraveni vnést dech do sebemenšího detailu."
+          link={"/design"}
+        />
+  </div>
+</section>

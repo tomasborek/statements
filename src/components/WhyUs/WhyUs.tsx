@@ -9,17 +9,14 @@ const WhyUs = () => {
     <section className={styles.why_us}>
       <h2>Proč zrovna statements?</h2>
       <p>
-        Víme, jaké to je, stát v krušných začátcích a tvrdě pracovat na svých
-        cílech. Náš přístup není v žádném případě korporátní a cokoliv s Vámi
-        rádi probereme v naprosto přátelské rovině. Máme zkušenosti jak z
-        větších, tak i menších firem, přičemž většina z nich měla svůj unikátní
-        záměr. Naše práce je zároveň i náš koníček, proto se vše snažíme
-        dotáhnout do detailu a hlavně tak, abyste Vy byli maximálně spokojeni.
-        Jsme mladí lidé a na vše se díváme moderním a trendy stylem - z on-line
-        světa nám nic neunikne! S náročnějšími problémy se radíme s experty
-        napříč celým profesním polem. Zkuste nám dát šanci a můžeme si společně
-        a nezavázně promluvit o Vašich ambicích a cílech. <br /> <br /> Budeme
-        se moc těšit.
+        Víme, jaké to je stát na začátku a mít vize a cíle. Proto s vámi budeme
+        vždy jednat přátelsky a otevřeně. Máme zkušenosti s malými i velkými
+        projekty, přičemž každý z nich byl jiný a unikátní. Design a vývoj je
+        naší vášní, a proto se všem detailům věnujeme s citem. Jsme mladý tým s
+        moderním a trendy přístupem, neustále v kroku s online světem.
+        Náročnější výzvy konzultujeme s experty napříč celým profesním polem.
+        Dejte nám šanci a rádi si nezávazně popovídáme o vašich ambicích a
+        cílech.
       </p>
       <div className={styles.actions}>
         <a href="/kontakt">

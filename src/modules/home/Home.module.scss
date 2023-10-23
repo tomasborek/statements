@@ -1,0 +1,72 @@
+@import "../../../styles/variables.scss";
+
+.home {
+  overflow-x: hidden;
+}
+
+.wireframe {
+  top: 400px;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+  position: absolute;
+  overflow-x: hidden;
+  > img {
+    width: 200%;
+  }
+  @media screen and (max-width: $smScreen) {
+    top: 1000px;
+  }
+}
+
+.under_banner {
+  margin-top: 96px;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  justify-content: space-between;
+  @media screen and (max-width: $smScreen) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  > .item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    > .icon {
+      position: relative;
+      //glowing blob
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: $lightGreen;
+
+        filter: blur(20px);
+      }
+      img {
+        width: 50px;
+      }
+    }
+    > .text {
+      font-size: 14px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      > h3 {
+        font-size: 1rem;
+      }
+      > p {
+        color: $proseText;
+      }
+    }
+  }
+}

@@ -1,23 +1,51 @@
 ---
-import styles from "./Home.module.scss";
-import Layout from "../layouts/Layout.astro";
-import { getIndexPage } from "../utils/api";
-import Banner from "./_components/Banner/Banner";
-import Services from "./_components/Services/Services.astro";
-import Technologies from "./_components/Technologies/Technologies";
+import styles from "@/modules/home/Home.module.scss";
+import Layout from "@/layouts/Layout/Layout.astro";
+import Banner from "@/modules/home/components/Banner/Banner.astro";
+import Services from "@/modules/home/components/Services/Services.astro";
 import WhyUs from "../components/WhyUs/WhyUs";
-const page = await getIndexPage();
+import Technologies from "@/modules/home/components/Technologies/Technologies";
 ---
 
 <Layout>
-  <Banner data={page} client:load />
-  <div class="main-container">
-    <Services services={page.services} />
-    <Technologies
-      devTech={page.devTechnologies}
-      marketingTech={page.marketingTechnologies}
-      client:visible
-    />
+  <div class={styles.wireframe}>
+    <img  src="/img/wireframe.svg" alt="">
+  </div>
+  <div class={`main-container ${styles.home}`}>
+    <Banner />
+    <div class={styles.under_banner}>
+      <div class={styles.item}>
+          <div class={styles.icon}>
+            <img src="/img/icons/pencil.svg">
+
+          </div>
+          <div class={styles.text}>
+              <h3>Design</h3>
+              <p>Jíme i očima. To stejné platí o vašem podniku. Pomůžeme vám zdokonalit vzhled vašeho webu.</p>
+          </div>
+      </div>
+      <div class={styles.item}>
+          <div class={styles.icon}>
+            <img src="/img/icons/settings.svg">
+
+          </div>
+          <div class={styles.text}>
+              <h3>Vývoj</h3>
+              <p>Od začátku do konce. Vyvineme a poradíme. S námi vždy víte do čeho jdete.</p>
+          </div>
+      </div>
+      <div class={styles.item}>
+          <div class={styles.icon}>
+              <img src="/img/icons/security.svg">
+          </div>
+          <div class={styles.text}>
+              <h3>Testování</h3>
+              <p>U vývoje to nekončí. Jsme vám k dispozici i pro testing a aftercare. Nenecháme vás ve štychu.</p>
+          </div>
+      </div>
+    </div>
+    <Services />
+    <Technologies client:visible/>
     <WhyUs />
   </div>
 </Layout>

@@ -1,0 +1,53 @@
+---
+import type { ServiceContent } from "@/types";
+import Layout from "../../layouts/Layout/Layout.astro";
+import ServiceLayout from "../../layouts/ServiceLayout/ServiceLayout";
+const page: ServiceContent = {
+  title: "Grafický design",
+  description: `Comic Sans a webové assety vytvořené v malování - to je základ úspěšného webu! Uhm, jo, to nejspíš nebude ono. Jsme tu od toho, abychom vám pomohli vytvořit skvělé a moderní grafické prvky přímo na míru. U nás žádný zběsilý Comic Sans nenajdete, nýbrž neskonalou paletu barev, fontů, tvarů a dalších aspektů, které oživí Váš byznys. O všem si společně nezávazně popovídáme a nastavíme si výsledný cíl tak, aby maximálně vyhovoval Vašim potřebám a odpovídal dnešním standardům.`,
+  banner: {
+    title: "S čím vám můžeme pomoci?",
+    description: "Vzbuďte v klientech profesionální dojem",
+    items: [
+      {
+        title: "Online design",
+        icon: "fas fa-text-height",
+        description: "Bannery, posty, webové komponenty a další"
+      },
+      {
+        title: "Propagační materiály",
+        icon: "fas fa-id-card",
+        description: "Letáky, brožury, plakáty, nebo třeba vizitky?"
+      },
+      {
+        title: "Produktové obaly",
+        icon: "fas fa-box",
+        description: "Tak, aby zákazník sáhl po Vašem produktu"
+      },
+      {
+        title: "Ostatní grafika",
+        icon: "fas fa-book",
+        description: "Od jídelního po polepy aut"
+      }
+    ]
+  },
+  checkList: {
+    title: "Jak probíhá tvorba grafických materiálů?",
+    items: [
+      "Konzultace a probrání konceptů grafických materiálů",
+      "Vytvoření prototypu a společné dolazení do cílové podoby",
+      "Export projektu do naší partnerské tiskárny",
+      "Odeslání na Vaši adresu"
+    ]
+  },
+  expert: {
+    name: "Pavel",
+    image: "pavel.png",
+    role: "Marketing Manager"
+  }
+}
+---
+
+<Layout title={page.title}>
+  <ServiceLayout content={page} />
+</Layout>

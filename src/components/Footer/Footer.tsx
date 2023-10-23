@@ -57,7 +57,7 @@ const Footer = () => {
           </section>
         </main>
         <div className={styles.signature}>
-          <p>Statements 2022 &copy; Všechna práva vyhrazena</p>
+          <p>Statements 2023 &copy; Všechna práva vyhrazena</p>
         </div>
       </div>
     </footer>

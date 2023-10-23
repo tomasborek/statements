@@ -1,0 +1,117 @@
+@import "../../../../../styles/variables.scss";
+@import "../../../../../styles/variables.scss";
+.banner {
+  padding: 4rem 2rem;
+  position: relative;
+  width: 100%;
+  border-radius: 30px;
+  background-color: black;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  @media screen and (max-width: $smScreen) {
+    padding: 2rem 1rem;
+  }
+  > .bg {
+    z-index: 1;
+    opacity: 0.7;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    @media screen and (max-width: $smScreen) {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  > .content {
+    gap: 2rem;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    @media screen and (max-width: $smScreen) {
+      flex-direction: column;
+      gap: 4rem;
+    }
+    > .text {
+      z-index: 2;
+      position: relative;
+      max-width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+      > h3 {
+        font-weight: normal;
+        font-size: 20px;
+        margin-bottom: 1rem;
+      }
+      > h1 {
+        font-size: 60px;
+        margin-bottom: 2rem;
+      }
+      > p {
+        color: $proseText;
+      }
+      > button,
+      > a {
+        margin-top: 2rem;
+      }
+      @media screen and (max-width: $smScreen) {
+        max-width: 100%;
+      }
+    }
+
+    > .overlay {
+      z-index: 1;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      background: rgb(0, 0, 0);
+      background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 1) 31%,
+        rgba(13, 91, 40, 0) 100%
+      );
+      @media screen and (max-width: $smScreen) {
+        top: 0;
+        left: 0;
+        bottom: 0;
+        background: rgb(0, 0, 0);
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 1) 25%,
+          rgba(0, 0, 0, 0) 100%
+        );
+      }
+    }
+    > .img {
+      width: 300px;
+      position: relative;
+      z-index: 2;
+      > img {
+        width: 100%;
+        transform: translate(-10px, -15px);
+        animation: floating 4s ease-in-out infinite;
+      }
+      @media screen and (max-width: $smScreen) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(-10px, -15px);
+  }
+  50% {
+    transform: translate(10px, 15px);
+  }
+  100% {
+    transform: translate(-10px, -15px);
+  }
+}

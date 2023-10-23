@@ -16,7 +16,7 @@ const NavOverlay = () => {
       <nav>
         <ul>
           <NavItem icon={"phone"} content={"Kontakt"} link="/kontakt" />
-          <NavItem icon={"users"} content={"Tým"} link="/team" />
+          <NavItem icon={"users"} content={"Kdo jsme"} link="/team" />
           <NavItem icon={"folder"} content={"Portfolio"} link="/portfolio" />
           <NavItem icon={"globe"} content={"Chci web"} link="/web" />
         </ul>

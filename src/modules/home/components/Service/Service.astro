@@ -1,0 +1,56 @@
+---
+export interface Props {
+  icon: string;
+  name: string;
+  description?: string;
+  link: string;
+}
+const { icon, name, description, link } = Astro.props;
+---
+
+<a href={link}>
+  <div class="service_item">
+    <i class={`${icon} green-shadow`}></i>
+    <h3>{name}</h3>
+    <p>{description}</p>
+  </div>
+</a>
+
+<style lang="scss">
+  @import "../../../../../styles/variables.scss";
+  .service_item {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $grayBg;
+    border-radius: 0.5rem;
+    flex: 1;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    & > i {
+      font-size: 3rem;
+      color: $lightGreen;
+      margin-bottom: 1rem;
+      transition: all 250ms;
+    }
+    & > h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      font-weight: bold;
+      text-align: center;
+      transition: all 250ms;
+    }
+    & > p {
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.25rem;
+      color: $proseText;
+    }
+    &:hover {
+      & > h3 {
+        color: $lightGreen;
+      }
+    }
+  }
+</style>

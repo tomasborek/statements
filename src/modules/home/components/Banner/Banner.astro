@@ -1,0 +1,23 @@
+---
+import GlowingButton from "@/components/GlowingButton/GlowingButton";
+import NormalButton from "../../../../components/NormalButton/NormalButton";
+import styles from "./Banner.module.scss";
+import ChangingText from "@/components/ChangingText/ChangingText";
+---
+
+<div class={styles.banner}>
+    <img src="/img/hero-pattern.jpg" class={styles.bg}>
+    <div class={`${styles.content} main-container`}>
+        <div class={styles.text}>
+            <h3>Vize jsou nekonečné</h3>
+            <h1>It's your <ChangingText client:load /></h1>
+            <p>Chcete, aby váš podnik rostl a rozvíjel se? Pomůžeme vám <br> odstartovat vlastní příběh.</p>
+            <p>Vize jsou nekonečné, společně je naplníme.</p>
+            <GlowingButton link={"/kontakt"}>Chci Statements</GlowingButton>
+        </div>
+        <div class={styles.img}>
+            <img src="/img/rocket.png" alt="">
+        </div>
+        <div class={styles.overlay}></div>
+    </div>
+</div>

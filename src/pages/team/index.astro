@@ -1,30 +1,28 @@
 ---
 import styles from "./Team.module.scss";
-//components
-import WhyUs from "../../components/WhyUs/WhyUs";
 import SocialIcon from "../../components/SocialIcon/SocialIcon";
-import MemberInfo from "./_components/MemberInfo/MemberInfo.astro";
-import { getTeamPage } from "../../utils/api";
-import Slider from "./_components/Slider/Slider";
-import Layout from "../../layouts/Layout.astro";
-const page = await getTeamPage();
+import MemberInfo from "@/modules/team/components/MemberInfo/MemberInfo.astro";
+import Slider from "@/modules/team/components/Slider/Slider";
+import Layout from "../../layouts/Layout/Layout.astro";
+import WhyUs from "@/components/WhyUs/WhyUs";
 ---
 
 <Layout title={"Team"}>
   <main class={`${styles.team}`}>
-    <Slider members={page.teamMembers} client:load />
+    <Slider client:load />
     <div class="main-container">
       <section class={styles.member_info}>
-        <h2>Náš tým</h2>
-        {
-          page.teamMembers.map((member: any) => (
+        <h2>Kdo jsme?</h2>
+          <MemberInfo
+            name={"Pavel Hašek"}
+            role={"Marketér"}
+            description={"Zdravím! Jmenuji se Pavel a ve Statements se soustředím na správný chod projektů a plynulý drive našeho týmu, mimo jiné Vás provedu různými marketing aktivitami, které budou potřeba k posílení Vašeho podnikání. Zkrátka společně nakopneme byznys a přidáme ten správný boost na ta správná místa. Mezi mé hobbies patří cestování, dobré jídlo, hudba a sledování novinek ze světa. Moc se budu těšit na kooperaci!"}
+          />
             <MemberInfo
-              name={member.name}
-              role={member.role}
-              description={member.description}
+              name={"Tomáš Bořek"}
+              role={"Vývojář"}
+              description={"Ahoj, já jsem Tomáš. Jsem hlavní developer ve Statements. Mám za úkol vše co se týče webů. Webovému vývoji se věnuji od svých 13 let a stále hledám nové vrcholky hor, které mohu pokořit. Kromě sezení před obrazovkou plnou barevných písmenek mě baví běh, posilování, hudba a trávení volného času s přáteli a rodinou. Budu se těšit na naši společnou spolupráci a na skvělý web, který spolu postavíme."}
             />
-          ))
-        }
       </section>
       <section class={styles.contact}>
         <h2>Sledujte nás na sociálních sítích</h2>
@@ -43,7 +41,7 @@ const page = await getTeamPage();
           />
         </div>
       </section>
-      <WhyUs />
+      <WhyUs/>
     </div>
   </main>
 </Layout>
